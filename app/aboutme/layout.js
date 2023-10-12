@@ -1,3 +1,4 @@
+import './about.css'
 export default function AboutmeLayout({ children }) {
-    return <section> {children} </section>
-  }
+    return <section className="aboutcontainer"> {children} </section>
+}
