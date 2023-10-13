@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <body className="bg-slate-950 font-mono">
         <header className="header">
           <nav className=" flex items-center justify-around my-3 mx-2 bg-slate-900 text-white rounded-2xl h-8 ">
-            <ul className="flex flex-row space-x-4">
+            <ul className="flex flex-row space-x-5">
               <li >
                 <Link href="/">Home</Link>
               </li>
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
                 <Link href="/projects">Projects</Link>
               </li>
               <li>
-                <Link href="/projects">Contact</Link>
+                <Link href="/contact">Contact</Link>
               </li>
             </ul>
           </nav>

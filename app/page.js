@@ -7,17 +7,9 @@ import ProjectsLayout from './projects/layout'
 
 export default function Home() {
   return (
-    <main>
-      <p>this is the main</p>
-      
-      <AboutmeLayout >
-        <Aboutme/>  
-      </AboutmeLayout >
-      <ProjectsLayout>
-        <Projects />
-      </ProjectsLayout>
-
-      
+    <main className=' '>
+      <p> Hello! I am Yashi. </p>
+      <p> Welcome to my developer space. </p> 
     </main>
   )
 }
