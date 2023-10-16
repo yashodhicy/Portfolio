@@ -13,9 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-slate-950 font-mono">
+      <body className="flex-col bg-slate-950 font-mono rounded-2xl mt-5 mx-4">
         <header className="header">
-          <nav className=" flex items-center justify-around my-3 mx-2 bg-slate-900 text-white rounded-2xl h-8 ">
+          <nav className=" flex items-center justify-around mb-5 mx-2 bg-slate-900 text-white rounded-2xl h-8 ">
             <ul className="flex flex-row space-x-5">
               <li >
                 <Link href="/">Home</Link>
@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           </nav>
         </header>
 
-        <div className="group mx-2 h-96 text-center justify-around bg-slate-900 text-white rounded-2xl ">{children}</div>
+        <div className="group mx-2 text-center bg-slate-900 text-white rounded-2xl">{children}</div>
       </body>
     </html>
   );
