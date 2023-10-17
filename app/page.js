@@ -3,6 +3,7 @@ import Aboutme from './aboutme/page'
 import Projects from './projects/page'
 import AboutmeLayout from './aboutme/layout'
 import ProjectsLayout from './projects/layout'
+import Link from 'next/link'
 
 
 
@@ -16,8 +17,16 @@ export default function Home() {
         <h1 className='text-5xl font-bold'> Yashodhi Chathurangi</h1>
         <h2 className='text-3xl '>Full-stack Software Developer</h2>
         <span className='flex justify-around gap-8'>
-          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 '> See my work </button>
-          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950'>Contact me</button>
+          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 '> 
+            <Link href="/projects">
+              See my work
+            </Link> 
+          </button>
+          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950'>
+            <Link href="/contact">
+              Contact me
+            </Link>
+          </button>
         </span>
         </div>
       </div>   
