@@ -1,4 +1,4 @@
-import Image from 'next/image'
+
 import Aboutme from './aboutme/page'
 import Projects from './projects/page'
 import AboutmeLayout from './aboutme/layout'
@@ -7,15 +7,18 @@ import ProjectsLayout from './projects/layout'
 
 
 export default function Home() {
+ 
   return (
     <main className='flex justify-center homecontainer rounded-2xl' >
-      <div className='flex flex-col gap-8 md:flex-row w-full md:flex-row'>
-        <img className= 'rounded-r-full rounded-b-full md:w-1/3 h-96'  src='/profile.jpg'/>
-        <div>
-        <h1 className='text-5xl mt-5 font-bold'> Yashodhi Chathurangi</h1>
-        <h2>Talented Software Developer</h2>
-        <button>Contact me</button>
-        <button>My work </button>
+      <div className='flex flex-col gap-8 md:flex-row w-full md:flex'>
+        <img className= 'rounded-r-full rounded-b-full max-h-96 max-w-md md:w-1/3'  src='/profile.jpg'/>
+        <div className='flex shrink flex-col space-y-8 mt-5'>
+        <h1 className='text-5xl font-bold'> Yashodhi Chathurangi</h1>
+        <h2 className='text-3xl '>Full-stack Software Developer</h2>
+        <span className='flex justify-around gap-8'>
+          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 '> See my work </button>
+          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950'>Contact me</button>
+        </span>
         </div>
       </div>   
     </main>
