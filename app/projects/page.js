@@ -1,6 +1,6 @@
 const Projects = () => {
     return (
-        <p>Projects</p>
+        <h1>Projects</h1>
     )
         
     
