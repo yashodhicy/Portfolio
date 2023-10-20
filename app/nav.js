@@ -13,7 +13,7 @@ export default function NavBar() {
 
   return (
      <>
-          <nav className="flex  w-full mx-2  md:invisible md:h-0">
+          <nav className="flex w-full mx-2  md:invisible md:h-0">
             <buttoon className='text-white' onClick= {() => togglenav()}>menu</buttoon>
           </nav>
           <nav className={`flex absolute w-full items-center mx-2 text-white ${isNavVisible ? 'visible' : 'invisible'}   md:justify-around md:relative md:h-12 md:mb-5 md:bg-slate-900 md:rounded-full md:visible md:flex-row md:w-auto`}>

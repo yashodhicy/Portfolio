@@ -17,12 +17,12 @@ export default function Home() {
         <h1 className='text-5xl font-bold'> Yashodhi Chathurangi</h1>
         <h2 className='text-3xl '>Full-stack Software Developer</h2>
         <span className='flex justify-around gap-8'>
-          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 ring-2 ring-blue-500'> 
+          <button className='animate-bounce border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 ring-2 ring-blue-500 hover:animate-none hover:scale-150'> 
             <Link href="/projects">
               See my work
             </Link> 
           </button>
-          <button className='border-2 border-neutral p-2 rounded-full hover:bg-white hover:text-sky-950 ring-2 ring-blue-500'>
+          <button className='animate-bounce border-2 border-neutral p-2 rounded-full ring-2 hover:bg-white hover:animate-none hover:scale-150 hover:text-sky-950  ring-blue-500'>
             <Link href="/contact">
               Contact me
             </Link>

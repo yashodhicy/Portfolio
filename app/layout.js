@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
-      <body className="flex-col bg-slate-950 font-mono rounded-2xl mt-5 mx-2">
+      <body className="flex flex-col bg-slate-950 font-mono rounded-2xl mt-5 mx-2">
         <header className="header">
           <NavBar />
         </header>
 
-        <div className="group mx-2 text-center bg-slate-900 text-white rounded-2xl">{children}</div>
+        <div className="group mx-2 w-full text-center bg-slate-900 text-white rounded-2xl md:w-auto">{children}</div>
       </body>
     </html>
   );
