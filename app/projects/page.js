@@ -29,46 +29,45 @@ const Projects = () => {
       image: "/house.png",
       name: "RentHub",
       description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull vacation there.We can add our nice properties for rent and have some extra money for our pocket.",
-      tech: ["ROR", "React", "Redux", "JS", "HTML/CSS"],
+      "Discover the perfect full-stack app for your dream vacation! Rent luxurious apartments and create unforgettable getaways. List your beautiful properties for rent, turning them into extra income for your next adventure.",
+      tech: ["ROR", "React", "Redux", "JS", "HTML" , "CSS"],
       live: "https://final-capstone-n7jz.onrender.com/",
       github: "https://github.com/yashodhicy/Final-capstone-front-end",
     },
     {
-      image: "/house.png",
-      name: "RentHub",
-      description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull",
-      tech: ["ROR", "React", "Redux"],
-      live: "https://final-capstone-n7jz.onrender.com/",
-      github: "https://github.com/yashodhicy/Final-capstone-front-end",
+      image: "/budget.png",
+      name: "Budgety",
+      description:"Introducing Budget_app, your ultimate mobile finance companion! Seamlessly manage your budget, customize expense categories, and pave the way to a brighter financial future, all from your mobile device. Take control, track your spending, and gain peace of mind – because financial empowerment is now just a tap away!",
+      tech: ["Ruby", "ROR", "PostgreSQL"],
+      live: "https://yashbudgetapp.onrender.com/",
+      github: "https://github.com/yashodhicy/Budget_app",
     },
     {
-      image: "/house.png",
-      name: "RentHub",
+      image: "/shows.png",
+      name: "Top Shows",
       description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull",
-      tech: ["ROR", "React", "Redux"],
-      live: "https://final-capstone-n7jz.onrender.com/",
-      github: "https://github.com/yashodhicy/Final-capstone-front-end",
+        "Where Entertainment Meets Your Voice! Explore TV series and movies, share your thoughts with comments, and connect with fellow viewers. Your entertainment experience, your way!",
+      tech: ["JS" , "HTML" , "CSS"],
+      live: "https://yashodhicy.github.io/JScapstone/dist/",
+      github: "https://github.com/yashodhicy/JScapstone",
     },
     {
-      image: "/house.png",
-      name: "RentHub",
+      image: "/rocket.png",
+      name: "Space Travelers",
       description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull",
-      tech: ["ROR", "React", "Redux"],
-      live: "https://final-capstone-n7jz.onrender.com/",
-      github: "https://github.com/yashodhicy/Final-capstone-front-end",
+        "If you've ever dreamt of visiting the Moon or Mars, today's the day to turn those dreams into reality. Reserve your rocket now and let your cosmic adventure begin. Remember, it's never too late to reach for the stars and make your biggest dreams take flight.",
+      tech: [ "React", "Redux","Bootstrap" , "HTML" , "CSS"],
+      live: "https://spacetravelers-vp0l.onrender.com/",
+      github: "https://github.com/yashodhicy/spaceTravelers",
     },
     {
-      image: "/house.png",
-      name: "RentHub",
+      image: "/bookstore.png",
+      name: "BookStore",
       description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull",
+        "Add Favorites and Dive into Chapters! As an ongoing project, you can curate your book collection, read at your pace, and enjoy the ongoing adventure. Your favorites, your chapters, all in one app.",
       tech: ["ROR", "React", "Redux"],
-      live: "https://final-capstone-n7jz.onrender.com/",
-      github: "https://github.com/yashodhicy/Final-capstone-front-end",
+      live: "https://bookstore-vrbz.onrender.com/",
+      github: "https://github.com/yashodhicy/bookstore",
     },
     {
       image: "/house.png",
@@ -117,7 +116,7 @@ const Projects = () => {
         <div class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900 bg-opacity-90 ">
         <div className="flex absolute shadow-xl shadow-white rounded-lg flex-col top-16 border-2 border-y-cyan-50 bg-slate-900 m-6 min-h-4/6 ">
           <h1 className="text-md">{projects[selectedProjectIndex].name}</h1>
-          <div className="flex flex-col popup-content m-3 sm:flex-row">
+          <div className="grid grid-flow-row popup-content m-3 sm:grid-flow-col">
   
             <div className="box-border my-3 sm:px-3 sm:justify-right ">
             <img
