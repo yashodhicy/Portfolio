@@ -1,6 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./projects.css";
+import { Caladea } from "next/font/google";
+import Link from "next/link";
+
 
 const Projects = () => {
   const [model, setModel] = useState(false);
@@ -9,14 +12,17 @@ const Projects = () => {
   const openPopup = (index) => {
     setModel(true);
     setSelectedProjectIndex(index);
-    console.log("selectedProjectIndex:", selectedProjectIndex);
   };
 
   const closePopup = () => {
     setModel(false);
     setSelectedProjectIndex(null);
-    console.log("selectedProjectIndex:", selectedProjectIndex);
+
   };
+
+  useEffect(() => {
+    console.log("selectedProjectIndex:", selectedProjectIndex);
+  }, [selectedProjectIndex]);
 
   const projects = [
     {
@@ -83,7 +89,7 @@ const Projects = () => {
           {projects.map((p, index) => (
             <div
               key={index}
-              className="flex flex-col shrink ring-4 rounded-xl border-2 border-white mx-4 my-6 sm:h-72 sm:w-72  text-white hover:scale-110  snap-normal snap-center "
+              className="flex flex-col shrink ring-4 rounded-xl border-2 border-white mx-4 my-6 py-2 sm:h-72 sm:w-72  text-white hover:scale-110  snap-normal snap-center "
             >
               <h2 className=" text-lg text-center w-full">{p.name}</h2>
               <img
@@ -103,22 +109,39 @@ const Projects = () => {
                 {" "}
                 See Project{" "}
               </button>
-              <span className="flex flex-col gap-3 justify-between m-3 sm:flex-row sm:gap-0">
-                {/* <Link href={p.github} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Github code </Link>
-              <Link href={p.live} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Live Link </Link> */}
-              </span>
+              
             </div>
           ))}
         </div>
-      </div>
-      {model && selectedProjectIndex !== null && (
-        <div className="popup">
-          <div className="popup-content">
-            <h1>Hello {selectedProjectIndex}</h1>
-            <button onClick={closePopup}>Close</button>
+        {selectedProjectIndex !== null && (
+        <div class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900 bg-opacity-90 ">
+        <div className="flex absolute shadow-xl shadow-white rounded-lg flex-col top-16 border-2 border-y-cyan-50 bg-slate-900 m-6 min-h-4/6 ">
+          <h1 className="text-md">{projects[selectedProjectIndex].name}</h1>
+          <div className="flex flex-col popup-content m-3 sm:flex-row">
+  
+            <div className="box-border my-3 sm:px-3 sm:justify-right ">
+            <img
+                className="flex shrink h-full box-content  rounded-lg"
+                src={projects[selectedProjectIndex].image}
+            ></img>
+            </div>
+            <div className="flex flex-col box-border ">
+              <button className="box-content absolute text-right top-0 right-2" onClick={closePopup}>Close</button>
+              <article className="box-content mt-3 px-3 border-2 rounded-lg ring-2 ">
+                <p className="text-justify">{projects[selectedProjectIndex].description}</p>
+              </article>
+              <span className=" box-content flex justify-between mt-5 gap-3 sm:flex-row sm:gap-4 ">
+                <Link href={projects[selectedProjectIndex].github} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Github code </Link>
+              <Link href={projects[selectedProjectIndex].live} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Live Link </Link>
+              </span>
+            </div>
+
           </div>
         </div>
+        </div>
       )}
+      </div>
+      
     </>
   );
 };
