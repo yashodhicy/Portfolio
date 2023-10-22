@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./projects.css";
-import { Caladea } from "next/font/google";
 import Link from "next/link";
 
 
@@ -96,8 +95,8 @@ const Projects = () => {
                 src={p.image}
               ></img>
               <article className="flex flex-nowrap justify-evenly gap-2 m-3 ">
-                {p.tech.map((p) => (
-                  <span>{p}</span>
+                {p.tech.map((p, index) => (
+                  <span key={index}>{p}</span>
                 ))}
               </article>
               <button
