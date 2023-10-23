@@ -80,14 +80,14 @@ const Projects = () => {
   ];
 
   return (
-    <>
+    <div className="mb-5 md:h-96">
       <h1 className=" text-2xl">Projects</h1>
-      <div className="flex justify-center w-88 md:h-96">
+      <div className="flex justify-center w-88">
         <div className="grid grid-flow-row gap-4 mt-4 mx-8 snap-x snap-mandatory w-full overflow-y-scroll scroll-smooth scrollbar-hide sm:grid-flow-col">
           {projects.map((p, index) => (
             <div
               key={index}
-              className="flex flex-col shrink ring-4 rounded-xl border-2 border-white mx-4 my-6 py-2 sm:h-72 sm:w-72  text-white hover:scale-110  snap-normal snap-center "
+              className="flex flex-col shrink ring-4 rounded-xl border-2 border-white mx-4 my-6 py-2 sm:h-72 sm:w-72  text-white hover:scale-110  snap-normal snap-center  "
             >
               <h2 className=" text-lg text-center w-full">{p.name}</h2>
               <img
@@ -140,7 +140,7 @@ const Projects = () => {
       )}
       </div>
       
-    </>
+    </div>
   );
 };
 

@@ -13,10 +13,10 @@ export default function NavBar() {
 
   return (
      <>
-          <nav className="flex w-full mx-2   md:invisible md:h-0">
+          <nav className="flex w-full mx-2 fixed top-0 z-10 md:invisible md:h-0">
             <buttoon className='text-white' onClick= {() => togglenav()}>menu</buttoon>
           </nav>
-          <nav className={`flex absolute w-full items-center mx-2 text-white ${isNavVisible ? 'visible' : 'invisible'}   md:justify-around md:relative md:h-12 md:mb-5 md:bg-slate-900 md:rounded-full md:visible md:flex-row md:w-auto`}>
+          <nav className={`flex fixed z-10 top-0 w-full items-center mx-2 text-white ${isNavVisible ? 'visible' : 'invisible'}   md:justify-around md:relative md:h-12 md:mb-5 md:bg-slate-900 md:rounded-full md:visible md:flex-row md:w-auto`}>
             <ul className=" text-lg flex flex-col w-40 p-2 gap-4 bg-opacity-90 rounded-r-full bg-slate-900  md:w-auto md:flex-row  md:gap-20 md:rounded-full ">
               <li>
                 <Link href="/" onClick={()=>togglenav()}>Home</Link>
