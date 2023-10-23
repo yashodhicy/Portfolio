@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
           <NavBar />
         </header>
 
-        <div className="group mx-2 w-full text-center bg-slate-900 text-white rounded-2xl md:w-auto">{children}</div>
+        <div className="group mx-2 text-center bg-slate-900 text-white rounded-2xl md:w-auto">{children}</div>
       </body>
     </html>
   );
