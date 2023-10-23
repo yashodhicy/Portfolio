@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
-      <body className="flex flex-col bg-slate-950 font-mono rounded-2xl mt-5 mx-2">
+      <body className="flex flex-col min-h-96 bg-slate-950 font-mono rounded-2xl mt-5 mx-2">
         <header className="header">
           <NavBar />
         </header>

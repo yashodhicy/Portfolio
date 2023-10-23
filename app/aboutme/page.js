@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import "./about.css";
+import Link from "next/link";
 
 
 const Aboutme = () => {
@@ -47,7 +48,7 @@ const Aboutme = () => {
     const timer = setTimeout(() => {
       // Increment the currentCard, but loop back to the first card when it exceeds the total number of cards.
       setCurrentCard((currentCard + 1) % totalCards);
-    }, 4000);
+    }, 5000);
 
     return () => {
       clearTimeout(timer); // Clear the timer when the component unmounts or when the dependency changes.
@@ -55,18 +56,18 @@ const Aboutme = () => {
   }, [currentCard, totalCards]);
 
   return (
-    <div className=" m-4">
+    <div className="flex flex-col gap-2 mx-2 mb-5  md:h-96">
       {aboutme.map((item, index) => (
         <div
           key={index}
           className={`w-full shadow-md justify-around shadow-cyan-600 transform transition-opacity ease-in ${
-            index === currentCard ? "scale-96 p-2 h-96 a opacity-100" : "h-0 w-0 scale-0 opacity-0 bg-slate-900"
+            index === currentCard ? "scale-96 p-2 a opacity-100" : "h-0 w-0 scale-0 opacity-0 bg-slate-900"
           }`}
         >
           <h1 className="flex text-2xl font-bold mx-auto p-2 my-3  ring-2 rounded-md border-2 h-fit w-fit ">
             {item.position}
           </h1>
-          <ul className="flex  flex-col text-2xl mx-auto p-2 my-3 h-fit w-fit text-justify justify-start">
+          <ul className="flex flex-col text-2xl mx-auto p-2 my-3 h-fit w-fit text-justify justify-start">
             {item.skills.map((s, index) => (
               <li className="text-xl py-4" key={index}>{s}</li>
             ))}
@@ -74,7 +75,9 @@ const Aboutme = () => {
         </div>
       ))}
 
+        <Link href={"https://docs.google.com/document/d/1sQStA93hGQxk1MVb9OBb1kfZG1hKTZ98TRDeBOvZ-y0/edit?usp=sharing"} className="mb-3  text-2xl p-3 ring-2 rounded-md w-fit m-auto hover:bg-sky-900 hover:ring-0 hover:border-2 hover:scale-90 ">My resume</Link>
     </div>
+
   );
 };
 export default Aboutme;
