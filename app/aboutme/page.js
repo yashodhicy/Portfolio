@@ -48,7 +48,7 @@ const Aboutme = () => {
     const timer = setTimeout(() => {
       // Increment the currentCard, but loop back to the first card when it exceeds the total number of cards.
       setCurrentCard((currentCard + 1) % totalCards);
-    }, 5000);
+    }, 7000);
 
     return () => {
       clearTimeout(timer); // Clear the timer when the component unmounts or when the dependency changes.
@@ -56,7 +56,7 @@ const Aboutme = () => {
   }, [currentCard, totalCards]);
 
   return (
-    <div className="flex flex-col gap-2 mx-2 mb-5  md:h-96">
+    <div className="flex flex-col gap-2 mx-2 mb-5 md:h-96">
       {aboutme.map((item, index) => (
         <div
           key={index}
