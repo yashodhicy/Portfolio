@@ -4,6 +4,10 @@ import Projects from './projects/page'
 import AboutmeLayout from './aboutme/layout'
 import ProjectsLayout from './projects/layout'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 
 
@@ -28,7 +32,23 @@ export default function Home() {
             </Link>
           </button>
         </span>
+        <span className='flex gap-5 pt-5 justify-center'>
+        <Link href={"https://github.com/yashodhicy/ "} className='hover:animate-pulse hover:scale-110'>
+           <FontAwesomeIcon icon={faGithub} size='2x'/>
+          </Link>
+          <Link href={"https://www.linkedin.com/in/yashodhichathurangi/"} className='hover:animate-pulse hover:scale-110'>
+           <FontAwesomeIcon  icon={faLinkedin} size='2x'/>
+          </Link>
+          <Link href={"https://twitter.com/Yashichathucy"} className='hover:animate-pulse hover:scale-110'>
+           <FontAwesomeIcon icon={faTwitter} size='2x'/>
+          </Link>
+          <Link href={"mailto:yashodhichathurangi94@gmail.com" } className='hover:animate-pulse hover:scale-110'>
+           <FontAwesomeIcon icon={faEnvelope} size='2x' className='hover:animate-pulse hover:scale-110'/>
+          </Link>
+          </span>
         </div>
+        
+
       </div>   
     </main>
   )
