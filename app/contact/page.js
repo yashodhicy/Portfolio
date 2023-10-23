@@ -13,12 +13,12 @@ const Contactme = () => {
   return (
     <div className=" mb-5 md:h-96">
       <p className=" text-2xl">Contact me</p>
-      <div className="box-border flex flex-col gap-3 sm:px-3 sm:justify-right sm:flex-row ">
+      <div className="box-border mt-2 flex flex-col gap-3 sm:px-3 sm:justify-right md:flex-row ">
         <img
-          className="box-content pb-2 flex shrink rounded-full"
+          className="box-content flex max-w-sm shrink rounded-full"
           src="/giphy.gif"
         />
-        <form onSubmit={handleSubmit} className=" box-content my-3 m-auto sm:w-2/5 text-cyan-800">
+        <form onSubmit={handleSubmit} className=" box-content my-3 m-auto min-w-md sm:w-2/5 text-cyan-800">
           <div className="m-2">
             <label
               htmlFor="fullName"
