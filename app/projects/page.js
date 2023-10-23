@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from "react";
 import "./projects.css";
 import Link from "next/link";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const [model, setModel] = useState(false);
@@ -119,12 +120,12 @@ const Projects = () => {
   
             <div className="box-border my-3 sm:px-3 sm:justify-right ">
             <img
-                className="flex shrink h-full box-content  rounded-lg"
+                className="flex shrink h-full box-content rounded-lg"
                 src={projects[selectedProjectIndex].image}
             ></img>
             </div>
             <div className="flex flex-col box-border ">
-              <button className="box-content absolute text-right top-0 right-2" onClick={closePopup}>Close</button>
+              <button className="box-content absolute text-right top-0 right-2" onClick={closePopup}><FontAwesomeIcon icon={faTimes} size="2x" /></button>
               <article className="box-content mt-3 px-3 border-2 rounded-lg ring-2 ">
                 <p className="text-justify">{projects[selectedProjectIndex].description}</p>
               </article>
