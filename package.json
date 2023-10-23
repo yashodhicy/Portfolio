@@ -10,6 +10,7 @@
     "lint:styles": "stylelint \"**/*.{css,scss}\""
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "next": "13.5.4",
     "react": "^18",
     "react-dom": "^18"
@@ -23,5 +24,4 @@
     "stylelint-config-standard": "^34.0.0",
     "tailwindcss": "^3"
   }
- 
 }
