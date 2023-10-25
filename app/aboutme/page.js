@@ -42,6 +42,13 @@ const Aboutme = () => {
     },
   ];
 
+  const skills = {
+    Front: ["JavaScript", "Next", "React", "Redux", "Tailwindcss", "HTML5", "CSS3"],
+    Back: ["Ruby", "Ruby on Rails", "MySQL", "PostgreSQL", "Python"],
+    Tools: ["Git", "GitHub", "Postman", "Selenium", "JMeter", "Render", "Mobile/Responsive Development"],
+    Professional: ["Critical thinking", "Remote Pair-Programming", "Teamwork", "Mentoring", "Leadership"]
+  };
+  
   const totalCards = aboutme.length;
 
   useEffect(() => {
