@@ -96,7 +96,7 @@ const Aboutme = () => {
                   : "h-0 w-0 scale-0 opacity-0 bg-slate-900"
               }`}
             >
-              <h1 className="flex text-2xl font-bold mx-auto p-2 my-3  ring-2 rounded-md border-2 h-fit w-fit ">
+              <h1 className="flex text-2xl font-bold mx-auto p-2 my-3 ring-2 rounded-md border-2 h-fit w-fit ">
                 {item.position}
               </h1>
               <ul className="flex flex-col text-2xl mx-auto p-2 my-3 h-fit w-fit text-justify justify-start">
@@ -122,16 +122,19 @@ const Aboutme = () => {
       </div>
         </div>
         <div className="m-2">
-          {Object.keys(skills).map((key) => (
+          {Object.keys(skills).map((key , index) => (
             <>
               <Accordion variant="bordered">
                 <AccordionItem
+                  key={index}
                   aria-label={key}
                   title={key}
                   className=" my-2 border-2 border-white rounded-lg pl-2 ring-2"
+                  
                 > <span className="grid grid-cols-3 gap-2">
                   {skills[key].map((value, index) => (
                       <Chip
+                      key={index}
                       variant="shadow"
                       classNames={{
                         base: "bg-gradient-to-br from-indigo-900 to-teal-700 border-small border-white/50 shadow-none wrap-border",
