@@ -130,8 +130,8 @@ const Projects = () => {
                 <p className="text-justify">{projects[selectedProjectIndex].description}</p>
               </article>
               <span className=" box-content flex justify-between mt-5 gap-3 sm:flex-row sm:gap-4 ">
-                <Link href={projects[selectedProjectIndex].github} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Github code </Link>
-              <Link href={projects[selectedProjectIndex].live} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Live Link </Link>
+                <Link target="_blank" href={projects[selectedProjectIndex].github} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Github code </Link>
+              <Link target="_blank" href={projects[selectedProjectIndex].live} className=' ring-2 rounded-lg border border-white px-2 hover:bg-white hover:text-sky-950 hover:font-bold'> Live Link </Link>
               </span>
             </div>
 

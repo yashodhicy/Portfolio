@@ -15,7 +15,7 @@ export default function NavBar() {
 
   return (
      <>
-          <nav className="flex m-2 rounded-md fixed top-0 z-10 md:invisible md:h-0">
+          <nav className="flex m-2 rounded-md fixed top-2  z-10 md:invisible md:h-0 ">
             <buttoon className='text-white m-1' onClick= {() => togglenav()}><FontAwesomeIcon icon={faBars} size="x" /></buttoon>
           </nav>
           <nav className={`flex fixed z-10 top-0 w-full items-center mx-2 text-white ${isNavVisible ? 'visible' : 'invisible'}   md:justify-around md:relative md:h-12 md:mb-5 md:bg-slate-900 md:rounded-full md:visible md:flex-row md:w-auto`}>

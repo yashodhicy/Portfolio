@@ -5,3 +5,7 @@
 /* stylelint-disable-next-line at-rule-no-unknown */
 @tailwind utilities;
 
+:root {
+    --tw-bg-opacity: 1;
+    background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+}
