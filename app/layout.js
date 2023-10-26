@@ -2,7 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NavBar from "./nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-
+import Providers from './providers.client';
 
 
 
@@ -17,12 +17,16 @@ export default function RootLayout({ children }) {
   
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-96 bg-slate-950 font-mono rounded-2xl mt-5 mx-2">
-        <header className="header">
+      <body>
+        <header className="header mt-2">
           <NavBar />
         </header>
 
-        <div className="group mx-2 mt-5 text-center bg-slate-900 text-white rounded-2xl md:w-auto md:mt-0">{children}</div>
+        <div className="group mx-2 text-center min-h-fit mt-12 bg-slate-900 text-white rounded-2xl md:w-auto md:mt-0">
+        <Providers>
+          {children}
+        </Providers>
+        </div>
       </body>
     </html>
   );
