@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./projects.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +8,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const Projects = () => {
   const [model, setModel] = useState(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
+  const projectsContainerRef = useRef(null);
 
   const openPopup = (index) => {
     setModel(true);
@@ -23,6 +24,22 @@ const Projects = () => {
   useEffect(() => {
     console.log("selectedProjectIndex:", selectedProjectIndex);
   }, [selectedProjectIndex]);
+
+  const scrollNext = () => {
+    if (projectsContainerRef.current) {
+      const container = projectsContainerRef.current;
+      const projectWidth = container.children[0].offsetWidth;
+      container.scrollLeft += projectWidth;
+    }
+  };
+
+  const scrollPrevious = () => {
+    if (projectsContainerRef.current) {
+      const container = projectsContainerRef.current;
+      const projectWidth = container.children[0].offsetWidth;
+      container.scrollLeft -= projectWidth;
+    }
+  };
 
   const projects = [
     {
@@ -80,11 +97,19 @@ const Projects = () => {
     },
   ];
 
+  
   return (
     <div className="mb-5 md:h-96">
       <h1 className=" text-2xl">Projects</h1>
       <div className="flex justify-center w-88">
-        <div className="grid grid-flow-row gap-4 mt-4 mx-8 snap-x snap-mandatory w-full overflow-y-scroll scroll-smooth scrollbar-hide sm:grid-flow-col">
+      <button
+          className="flex justify-center bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 h-5"
+          onClick={scrollPrevious}
+        >
+          Previous
+        </button>
+        <div ref={projectsContainerRef}
+        className="grid grid-flow-row gap-4 mt-4 mx-8 snap-x snap-mandatory w-full overflow-y-scroll scroll-smooth scrollbar-hide sm:grid-flow-col">
           {projects.map((p, index) => (
             <div
               key={index}
@@ -112,6 +137,12 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        <button
+          className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4"
+          onClick={scrollNext}
+        >
+          Next
+        </button>
         {selectedProjectIndex !== null && (
         <div class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900 bg-opacity-90 ">
         <div className="flex absolute shadow-xl shadow-white rounded-lg flex-col top-16 border-2 border-y-cyan-50 bg-slate-900 m-6 min-h-4/6 ">
