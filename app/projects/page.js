@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./projects.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faAngleLeft, faAngleRight, faArrowAltCircleLeft, faArrowLeft, faCaretLeft, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Projects = () => {
   const [model, setModel] = useState(false);
@@ -85,16 +85,7 @@ const Projects = () => {
       tech: ["ROR", "React", "Redux"],
       live: "https://bookstore-vrbz.onrender.com/",
       github: "https://github.com/yashodhicy/bookstore",
-    },
-    {
-      image: "/house.png",
-      name: "RentHub",
-      description:
-        "This is a full stack app that can use to rent a nice appartment and spend a wonderfull",
-      tech: ["ROR", "React", "Redux"],
-      live: "https://final-capstone-n7jz.onrender.com/",
-      github: "https://github.com/yashodhicy/Final-capstone-front-end",
-    },
+    }
   ];
 
   
@@ -103,10 +94,10 @@ const Projects = () => {
       <h1 className=" text-2xl">Projects</h1>
       <div className="flex justify-center w-88">
       <button
-          className="flex justify-center bg-blue-500 text-white py-2 px-4 rounded-lg mt-4 h-5"
+          className="hidden sm:block text-white py-2 px-4 rounded-lg mt-4 border-none "
           onClick={scrollPrevious}
         >
-          Previous
+          <FontAwesomeIcon icon={faAngleLeft} size='x'/>
         </button>
         <div ref={projectsContainerRef}
         className="grid grid-flow-row gap-4 mt-4 mx-8 snap-x snap-mandatory w-full overflow-y-scroll scroll-smooth scrollbar-hide sm:grid-flow-col">
@@ -138,10 +129,10 @@ const Projects = () => {
           ))}
         </div>
         <button
-          className="bg-blue-500 text-white py-2 px-4 rounded-lg mt-4"
+          className="hidden sm:block text-white py-2 px-4 rounded-lg mt-4"
           onClick={scrollNext}
         >
-          Next
+          <FontAwesomeIcon icon={faAngleRight} size='x'/>
         </button>
         {selectedProjectIndex !== null && (
         <div class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900 bg-opacity-90 ">
