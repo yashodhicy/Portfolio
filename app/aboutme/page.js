@@ -26,7 +26,7 @@ const Aboutme = () => {
       position: "Project Portfolio",
       skills: [
         " Extensive experience with 40+ projects.",
-        " Showcasing analytical prowess, technical acumen, and problem-solving skills.",
+        " Showcasing analytical prowess, technical acumen, and problem-solving skills."
       ],
     },
     {
@@ -37,7 +37,7 @@ const Aboutme = () => {
       position: "Future-Ready",
       skills: [
         " Excited to lead the way in the ever-evolving realm of technology.",
-        " Ready to embark on a remarkable journey together!",
+        " Ready to embark on a remarkable journey together!"
       ],
     },
   ];
@@ -92,11 +92,11 @@ const Aboutme = () => {
               key={index}
               className={` box-content m-2 shadow-md justify-start shadow-cyan-600 transform transition-opacity ease-in ${
                 index === currentCard
-                  ? "scale-96 p-2  opacity-100"
+                  ? "scale-96 p-2 mb-5 opacity-100"
                   : "h-0 w-0 scale-0 opacity-0 bg-slate-900"
               }`}
             >
-              <h1 className="flex text-2xl font-bold mx-auto p-2 my-3 ring-2 rounded-md border-2 h-fit w-fit ">
+              <h1 className="flex text-2xl font-bold mx-auto p-2 mt-2 ring-2 rounded-md border-2 h-fit w-fit ">
                 {item.position}
               </h1>
               <ul className="flex flex-col text-2xl mx-auto p-2 my-3 h-fit w-fit text-justify justify-start">
