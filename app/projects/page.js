@@ -4,11 +4,15 @@ import "./projects.css";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight, faArrowAltCircleLeft, faArrowLeft, faCaretLeft, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 const Projects = () => {
   const [model, setModel] = useState(false);
   const [selectedProjectIndex, setSelectedProjectIndex] = useState(null);
   const projectsContainerRef = useRef(null);
+  const swiperElRef = useRef(null);
 
   const openPopup = (index) => {
     setModel(true);
@@ -22,8 +26,15 @@ const Projects = () => {
   };
 
   useEffect(() => {
-    console.log("selectedProjectIndex:", selectedProjectIndex);
-  }, [selectedProjectIndex]);
+    swiperElRef.current.addEventListener('swiperprogress', (e) => {
+      const [swiper, progress] = e.detail;
+      console.log(progress);
+    });
+
+    swiperElRef.current.addEventListener('swiperslidechange', (e) => {
+      console.log('slide changed');
+    });
+  }, []);
 
   const scrollNext = () => {
     if (projectsContainerRef.current) {
@@ -90,21 +101,29 @@ const Projects = () => {
 
   
   return (
-    <div className="mb-5 md:h-96">
+    <>
       <h1 className=" text-2xl">Projects</h1>
-      <div className="flex justify-center w-88">
-      <button
-          className="hidden sm:block text-white py-2 px-4 rounded-lg mt-4 border-none "
-          onClick={scrollPrevious}
-        >
-          <FontAwesomeIcon icon={faAngleLeft} size='x'/>
-        </button>
-        <div ref={projectsContainerRef}
-        className="grid grid-flow-row gap-4 mt-4 mx-8 snap-x snap-mandatory w-full overflow-y-scroll scroll-smooth scrollbar-hide sm:grid-flow-col">
+        <swiper-container
+    margin-bottom = {4}
+    ref={swiperElRef}
+    slides-per-view ="3"
+    spaceBetween={5} // Adjust as needed
+    navigation = {{autoprefixer: true}}
+    loop={true}
+    centeredSlides={true}
+    effect="coverflow"
+    coverflowEffect={{
+      rotate: -20, // Adjust the rotation angle
+      stretch: 0,
+      depth: 350, // Adjust the depth
+      modifier: 2,
+      slideShadows: true,
+    }}
+  >
           {projects.map((p, index) => (
-            <div
+            <swiper-slide
               key={index}
-              className="flex flex-col shrink ring-4 rounded-xl border-2 border-white mx-4 my-6 py-2 sm:h-72 sm:w-72  text-white hover:scale-110  snap-normal snap-center  "
+              bordercolor = "white"
             >
               <h2 className=" text-lg text-center w-full">{p.name}</h2>
               <img
@@ -125,15 +144,9 @@ const Projects = () => {
                 See Project{" "}
               </button>
               
-            </div>
+            </swiper-slide>
           ))}
-        </div>
-        <button
-          className="hidden sm:block text-white py-2 px-4 rounded-lg mt-4"
-          onClick={scrollNext}
-        >
-          <FontAwesomeIcon icon={faAngleRight} size='x'/>
-        </button>
+        </swiper-container>
         {selectedProjectIndex !== null && (
         <div class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900 bg-opacity-90 ">
         <div className="flex absolute shadow-xl shadow-white rounded-lg flex-col top-16 border-2 border-y-cyan-50 bg-slate-900 m-6 min-h-4/6 ">
@@ -161,9 +174,9 @@ const Projects = () => {
         </div>
         </div>
       )}
-      </div>
+      </>
       
-    </div>
+    // </div>
   );
 };
 
