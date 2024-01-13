@@ -2,9 +2,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import NavBar from "./nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Providers from './providers.client';
-
-
+import Providers from "./providers.client";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,18 +12,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" className="height-88">
+      <body className="h-full">
         <header className="header mt-2">
           <NavBar />
         </header>
 
-        <div className="group mx-2 text-center min-h-fit mt-12 bg-slate-900 text-white rounded-2xl md:w-auto md:mt-0">
-        <Providers>
-          {children}
-        </Providers>
+        <div className="group mx-2 text-center h-full mt-12 bg-slate-900 text-white rounded-2xl md:w-auto md:mt-0">
+          <Providers>{children}</Providers>
         </div>
       </body>
     </html>

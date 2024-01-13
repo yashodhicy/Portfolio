@@ -1,9 +1,8 @@
-"use client"
+"use client";
 
 import { ValidationError, useForm } from "@formspree/react";
 
 const Contactme = () => {
-
   const [state, handleSubmit] = useForm("xnqkwpoq");
 
   if (state.succeeded) {
@@ -11,20 +10,22 @@ const Contactme = () => {
   }
 
   return (
-    <div className=" mb-5 md:h-96">
+    <div className=" mb-5 h-full">
       <p className=" text-2xl">Contact me</p>
       <div className="box-border mt-2 flex flex-col gap-3 sm:px-3 sm:justify-right md:flex-row ">
         <img
           className="box-content flex max-w-sm shrink rounded-full"
           src="/giphy.gif"
         />
-        <form onSubmit={handleSubmit} className=" box-content my-3 m-auto min-w-md sm:w-2/5 text-cyan-800">
+        <form
+          onSubmit={handleSubmit}
+          className=" box-content my-3 m-auto min-w-md sm:w-2/5 text-cyan-800"
+        >
           <div className="m-2">
             <label
               htmlFor="fullName"
               className="block text-sm font-medium "
-            >
-            </label>
+            ></label>
             <input
               type="text"
               id="fullName"
@@ -32,16 +33,18 @@ const Contactme = () => {
               placeholder="Full name"
               className="mt-1 p-2 w-full border border-gray-300 rounded focus:ring-sky-600 focus:border-sky-600"
             />
-            <ValidationError prefix="Email" field="email" errors={state.errors} />
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </div>
 
           <div className="m-2">
             <label
               htmlFor="email"
               className="block text-sm font-medium "
-            >
-              
-            </label>
+            ></label>
             <input
               type="email"
               id="email"
@@ -55,9 +58,7 @@ const Contactme = () => {
             <label
               htmlFor="message"
               className="block text-sm font-medium"
-            >
-             
-            </label>
+            ></label>
             <textarea
               id="message"
               name="message"

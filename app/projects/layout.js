@@ -1,4 +1,4 @@
-import './projects.css';
+import "./projects.css";
 export default function ProjectsLayout({ children }) {
-    return <section className="projectscontainer"> {children} </section>
+  return <section className="projectscontainer h-full"> {children} </section>;
 }

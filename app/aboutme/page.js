@@ -62,11 +62,10 @@ const Aboutme = () => {
       "Render",
     ],
     "Professional skills": [
-      "Critical thinking",
-      "Pair-Programming",
       "Teamwork",
       "Mentoring",
       "Leadership",
+      "Pair-Programming",
     ],
   };
 
@@ -84,9 +83,9 @@ const Aboutme = () => {
   }, [currentCard, totalCards]);
 
   return (
-      <section className="grid grid-flow-row  md:grid-flow-col">
+      <section className="grid grid-flow-row md:mx-20 h-full">
         <div className=" top-1 mx-2">
-          <div className="box-border w-full">
+          <div className="box-border">
           {aboutme.map((item, index) => (
             <div
               key={index}
@@ -121,7 +120,7 @@ const Aboutme = () => {
       </Link>
       </div>
         </div>
-        <div className="m-2">
+        <div className="m-2 md:grid md:grid-cols-2">
           {Object.keys(skills).map((key , index) => (
             <>
               <Accordion variant="bordered">
