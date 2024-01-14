@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import NavBar from "./nav";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Providers from "./providers.client";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,10 @@ export default function RootLayout({ children }) {
         </header>
 
         <div className="group mx-2 text-center h-full mt-12 bg-slate-900 text-white rounded-2xl md:w-auto md:mt-0">
-          <Providers>{children}</Providers>
+          <Providers>
+            {children}
+            <SpeedInsights />
+          </Providers>
         </div>
       </body>
     </html>

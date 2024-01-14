@@ -161,7 +161,7 @@ const Projects = () => {
                     src={projects[selectedProjectIndex].image}
                   ></img>
                 </div>
-                <div className="flex flex-col box-border">
+                <div className="flex flex-col box-border overflow-y-scroll">
                   <button
                     className="box-content absolute text-right top-0 right-2"
                     onClick={closePopup}
